@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("click", function() {
+            const box = document.getElementById("box");
+            box.addEventListener("click", function(event){
+                console.log("target : ", event.target);
+                console.log("currentTarget : ", event.currentTarget);
+                console.log("this : ", this);
+            });
+        });
+    </script>
+    <div id="box">
+        <span>클릭!</span>
+    </div>
+</body>
+</html>

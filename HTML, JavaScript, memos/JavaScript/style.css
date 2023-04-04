@@ -1,0 +1,17 @@
+* {box-sizing: border-box;}
+
+body{margin: 0;}
+
+#more_menus{
+    transition: 1s;
+    position: fixed;
+    width: calc( 100% - 150px );
+    border-right: 1px solid #000;
+    height: 100%;
+    background: gray;
+    left: calc(( 100% - 150px ) * -1);
+    top: 0;
+}
+#more_menus.on{
+    left : 0;
+}

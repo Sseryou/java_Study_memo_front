@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습!</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+
+    <form action="post" action="ex03_ps.html">
+        <input type="hidden" name="mode" value="join">
+        <dl>
+            <dt>아이디</dt>
+            <dd>
+                <input type="text" name="userId" value="user01" required>
+            </dd>
+        </dl>
+        <dl>
+            <dt>비밀번호</dt>
+            <dd>
+                <input type="password" name="userPw" required placeholder="아이디는 8자 이상 입력하세요." minlength="8">
+            </dd>
+        </dl>
+        <dl>
+            <dt>회원명</dt>
+            <dd>
+                <input type="text" name="userNm" required>
+            </dd>
+        </dl>
+        <dl>
+            <dt>이메일</dt>
+            <dd>
+                <input type="email" name="email">
+            </dd>
+        </dl>
+        <dl>
+            <dt>생년월일</dt>
+            <input type="date" name="birthDt">
+        </dl>
+        <dl>
+            <dt>좋아하는 색상</dt>
+            <input type="color" name="color">
+        </dl>
+        <dl>
+            <dt>나이</dt>
+            <input type="range" name="age" min="20" max="100">
+        </dl>
+        <dl>
+            <dt>평생회원</dt>
+            <dd>
+                <label>
+                <input type="radio" name="lifemember" value="y" checked>동의함
+                </label>
+                <label>
+                <input type="radio" name="lifemember" value="n">동의안함
+                </label>
+            </dd>
+        </dl>
+        <dl>
+            <dt>취미</dt>
+            <dd>
+                <input type="checkbox" name="hobby" id="hobby1" value="축구">
+                <label for="hobby1">축구</label>
+
+                <input type="checkbox" name="hobby" id="hobby2" value="독서">
+                <label for="hobby2">독서</label>
+
+                <input type="checkbox" name="hobby" id="hobby3" value="수영">
+                <label for="hobby3">수영</label>
+            </dd>
+        </dl>
+        <dl>
+            <dt>휴대전화 번호</dt>
+            <dd>
+                <select name="mobile">
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="070">070</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>자기소개</dt>
+            <dd>
+                <textarea name="intro" rows="10" cols="30">자기소개 내용...</textarea>
+            </dd>
+        </dl>
+        <!-- <input type="reset" value="다시입력">
+        <input type="submit" value="가입하기"> -->
+
+        <button type="reset">다시입력</button>
+        <button type="submit">가입하기</button>
+    </form>
+
+
+</body>
+</html>

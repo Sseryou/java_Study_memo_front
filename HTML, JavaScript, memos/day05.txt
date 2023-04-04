@@ -1,0 +1,198 @@
+웹브라우저 객체
+
+1. 클라이언트 측 자바스크립트
+
+2. 웹 브라우저에서 자바스크립트 실행 순서
+3. 웹브라우저 객체
+
+hash -> 검색 키워드
+	#키워드
+	-> id="키워드"
+
+window
+	location - 웹브라우저의 주소와 관련되어 있는 속성 + 기능
+		페이지 이동
+		-assign - 방문기록 남기는 이동
+			href = "주소"
+		-replace - 방문기록이 없는 이동
+
+		새로고침
+		-reload()
+
+	history - 방문기록 관련되어 있는 속성 + 기능
+		length : 방문기록 갯수
+		scrollRestoration : auto(기본값) 
+				-이전 페이지 이동시 스크롤 위치를 기억
+				manual 
+				- 스크롤 위치를 기억하지 않음
+
+		back() : 방문기록 바로 직전 뒤로가기
+		forward() : 방문기록 바로 직전 앞으로가기
+		go(숫자) : 예) 2 -> 2단계 앞으로 이동 
+			     -2 -> 2단계 뒤로 이동
+
+	screen
+		landscape - 가로모드
+		portrait - 세로모드
+		
+	navigator
+		-브라우저 운영 환경 정보
+
+
+
+
+4. Document 객체 ★
+	document - 문서
+		1)태그명으로 요소(HTML 태그) 선택
+		   document.getElementsByTagName("태그명");
+
+		2)클래스명으로 요소 선택
+		   document.getElementsByClassName("클래스명");
+
+		3)ID 명으로 요소 선택
+		   document.getElementById("아이디명");
+
+		4) name 속성명으로 요소 선택
+		   document.getElementsName("속성명");
+
+		5) CSS 선택자로 요소 선택
+		   document.querySelector("CSS 선택자");  : 요소 중 첫번째 1개만 선택
+		   document.querySelectorAll("CSS 선택자"); : 모든 요소를 선택
+	
+		6) 상대적 위치로 검색
+		document
+			parentElement : 부모 요소
+			children : 자식 요소(여러개)
+			firstElementChild : 첫번째 자식
+			lastElementChild : 마지막 자식
+			previousElementSibling : 이전 형제 요소
+			previousElementSibling : 다음 형제 요소
+
+
+		creatElement("태그") -> 메모리에 document 객체 생성
+		createTextNode("텍스트") -> 메모리에 text document 객체 생성		
+
+		부모요소.appendChild(자식요소); -> 자식요소가 부모의 가장 끝 자식으로 등록
+		부모요소.insertBefore("추가할 요소", "바로 뒤 요소");
+
+		부모요소.removeChild(자식요소); -> 자식요소 제거
+
+	속성을 다루는 메서드
+
+		document
+			setAttribute("속성명", "값");
+			getAttribute("속성명");
+			removeAttribute("속성명");
+
+		자주 다루는 속성들은 document 객체의 속성명으로 바로 접근
+		id, className(class), type, src, name, target, href...
+	
+	data를 다루는 속성 - document.dataset
+
+	class를 다루는 속성(객체) - document.classList
+		-클래스명 조회
+			-add : 클래스 추가
+			-remove : 클래스 제거
+			-contains : 클래스가 포함되어 있는지 체크
+			-toggle : 클래스가 있으면 제거, 없으면 추가
+
+	window
+		console
+			log, dir, error, trace, time, timeEnd
+
+		alert("메세지") - 메세지 팝업
+		confirm("메세지") - 확인, 취소 의사 팝업 (취소 - false, 확인 - true)
+		prompot("메세지") - 입력 팝업
+
+	-지연 반복 실행
+	setInterval(function(){
+	//실행될 코드
+	},지연시간);
+		지연시간 1000 -> 1초
+
+	-지연 실행
+	setTimeout(function(){
+	//실행될 코드
+	},지연시간);
+		지연시간 1000 -> 1초
+
+	-스크롤바를 제외한 너비, 높이
+	innerWidth
+	innerHeight
+
+	-스크롤바를 포함한 너비와 넓이
+	outerWidth
+	outerHeight
+
+	-스크롤한 위치
+	pageXOffset : 가로방향 스크롤 한 정도
+	pageYOffset : 세로방향 스크롤 한 정도
+
+	
+	document
+		head
+		body
+		form의 name 속성
+
+		innerHTML : 태그 안쪽에 있는 HTML 문자열 반환
+			   : 값을 지정하면 HTML 변경
+
+		 innerText : 태그 안쪽에 있는 Text 반환
+			  : 값을 지정하면 Text 변경
+
+
+서버(HTML 텍스트) 응답 -> 
+브라우저가 Document 객체로 변환 + DOM Tree 구조 생성 ->
+
+브라우저가 DOMContentLoaded 이벤트 발생시킴
+브라우저에서 이미지, 외부 CSS, JS, 비디오 등등 로드 완료 ->
+브라우저가 load 이벤트 발생
+
+DOM(Document Object Model)
+
+<script>
+	-async
+	-defer -> DOMContentLoaded 이벤트 이후 실행
+
+
+요소 생성
+	태그
+	document
+		createElement("태그명");
+
+	텍스트
+		createTextNode("텍스트");
+
+요소 추가
+	document
+		.appendChild(요소)
+		.insertBefore(추가할 요소, 바로 뒤 요소);
+
+속성 추가, 조회, 삭제
+	document
+		.setAttribute("속성명", "속성값");
+		.getAttribute("속성명");
+		.removeAttribute("속성명");
+
+	많이 사용하고 기능과 관련있는 속성 -> document 객체의 속성으로 바로 접근
+	id, className , src, type, name, href, target.....
+
+	정보성 속성
+	data-속성명
+		document.dataset
+
+	클래스를 다루는 객체
+	document
+		classList
+			add : 클래스 추가
+			remove : 클래스 제거
+			contains : 클래스 포함여부 체크
+			toggle : 클래스가 있으면 제거, 없으면 추가
+
+
+
+
+
+	
+
+

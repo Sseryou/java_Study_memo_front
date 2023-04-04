@@ -1,0 +1,187 @@
+블록 유효 범위 : let과 const
+
+var 변수 : 변수의 유효범위 함수 단위
+	: 변수의 변경이 매우 유연 -> 단점
+
+
+
+
+let, const -> { ... } 지역 범위
+
+let : 변수 선언자 - 변수의 값을 변경 O
+const : 상수 선언자 - 변수의 값 변경 X
+
+const를 기본 변수 선언자
+변경이 필요한 경우만 let을 사용
+
+3. 함수 리터럴로 함수 정의하기
+
+변수 = 함수객체;
+
+
+4. 객체의 메서드
+함수 객체가 값으로써 객체에 있으면 메서드라는 용어
+
+5. 즉시 실행 함수
+
+(function 함수명 (...){
+
+})();
+
+-매개변수 O
+-반환값 O
+
+
+
+
+1.생성자
+
+구분하기 위해서 첫글자는 대문자
+
+함수 객체 == 일급 객체
+	1. 매개변수
+	2. 반환값
+	3. 객체 -> 다른 객체 생성
+
+상속
+[[prototype]] - 프로토타입 체인
+__proto__
+Object.setPrototypeOf();
+
+instanceof - 출처를 확인한다
+
+프로토타입 체인 연결 방식의 상속
+유동적인 상속
+
+Function 생성자 객체 -> function
+
+const p1 - new Person();
+1) 생성자 함수 객체의 프로토타입 상속
+p1.__proto__ = Person.prototype;
+2)Person 생성자 함수를 this -> p1 변경해서 호출
+
+Person.prototype.constructor.call(p1);
+
+call을 이용해서 this의 참조 위치 바꾸기
+
+p1;
+
+class 생성자 함수명 {
+	constructor() {
+		초기화
+	}
+}
+
+함수 객체 지역 변수
+	this
+	argument
+
+
+...변수 -> 가변 매개변수
+
+
+2. 프로토타입
+
+
+3. 내장객체
+
+ECMAScript Core 객체
+	생성자 객체
+	Object
+	String
+		-래퍼(Wrapper) 생성자 객체
+	Number
+		-래퍼(Wrapper) 생성자 객체
+	Boolean
+	Array
+	Date
+	Funtion
+	...
+	Error
+
+
+	객체
+	Math
+		abs() : 절대값
+		sign() : 부호 (음수 : -1, 0, 양수 1)
+		pow() :
+		random() : 0~1미만
+
+		round() : 반올림
+		floor() : 버림
+		ceil : 올림
+	JSON
+		-JavaScript Object Notation : 자바스크립트 객체 표기법
+
+		-stringify : 자바스크립트 객체 -> 문자열 형식 JSON
+		-parse : 문자열 형식의 JSON -> 자바스크립트 객체
+
+
+호스트 객체
+
+
+
+4. 배열
+
+Array 생성자 함수 객체
+- 데이터군을 다룰 수 있는 개체
+
+new Array()
+
+매개변수 1 - 숫자 : 빈 공간을 숫자만큼 생성
+		(숫자, 양수, 1이상의 수)
+매개변수가 2개 이상 : 데이터 추가
+
+[ ] == new Array()
+
+{
+	0 : "apple"
+	1 : "mango"
+	2 : "orange"
+	length : 3
+}
+
++ 프로토타입 체인 : Array.prototype
+
+배열 객체, 숫자 속성 [순서번호]
+
+추가
+	끝에
+	push
+	
+	앞에
+	unshift
+
+	중간 추가
+	splice
+
+제거
+	끝에
+	pop() -> 꺼내서 반환	
+
+	앞에
+	shift -> 꺼내서 반환
+
+	중간 제거
+	splice
+
+
+map
+
+forEach
+
+includes - 참거짓(true,false)
+
+
+찾는 요소의 위치, 찾지 못하면 -1을 반환
+indexOf
+lastIndexOf
+
+concat - 배열간 결합
+Array.prototype.join -> 배열을 결합 -> 문자열
+
+String.prototype.split -> 문자열을 잘라서 -> 배열
+
+
+
+

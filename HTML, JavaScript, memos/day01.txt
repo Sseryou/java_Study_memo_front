@@ -1,0 +1,254 @@
+html
+
+vs code
+
+settings -> wrap 검색 -> on으로 바꿔주기
+
+
+HTML
+HyperText Markup Language
+
+1.태그
+내용이 있는 태그
+<태그명>...</태그명>
+
+내용이 없는 태그
+<태그명 /> -> / 생략 가능
+<meta /> -> <meta>
+
+2. 기본 구조
+<!DOCTYPE html> - HTML5 버전
+<html>
+	<head>...</head> - 사이트 정보, 자원(CSS, JS)
+	<body>...</body> - 실제 출력되는 자원
+</html>
+
+
+
+3. 속성
+태그에 있는 부가적인 정보
+a 태그 -> 링크
+	- href="이동할 링크"
+
+img 태그
+	
+
+4. HTML 문서
+
+
+5. Headings
+h1 ~ 6
+
+6.p(문단태그)
+<p>...</p>
+
+
+7.주석(Comment)
+	-설명 : 브라우저가 출력 무시
+	- <!-- 설명 -->
+
+	- 특정 태그의 출력 배제
+
+8. 링크 (a)
+	- 페이지 이동
+a
+	href : 페이지 이동
+	target : 페이지가 이동할 창 (window)
+		_self : 현재 창(기본값)
+		_parent : 부모 창
+		_blank : 새 창으로 이동
+		_top : 가장 상위 창
+
+	부모 -> 자식창
+		-iframe : name 속성값
+	
+
+	iframe 태그 : 문서에 포함되는 웹브라우저 창
+		-src : 주소 입력
+		-width : 너비
+		-height : 높이
+		-name : 창의 이름
+
+9. 줄개행
+<br/>
+<br>
+
+10. 경로
+-절대경로
+
+-상대경로
+	-기준경로
+		.. -> 기준 경로보다 1단계 위쪽
+
+
+11.이미지
+- alt : 이미지가 출력되지 않을때 대신 출력할 대체텍스트
+
+
+12. 테이블 (tables)
+표
+<table>
+	<tr> -> 행
+	<th> -> 제목
+	<td> -> 데이터
+
+	<thead>
+	<tbody>
+
+td
+	rowspan='병합할 행 갯수' : 행 병합
+	colspan='병합할 열 갯수' : 열 병합
+
+th, td
+	좌우정렬
+	align="left|center|right"
+	상하정렬
+	valign="top|middle|bottom"
+
+13. 리스트 태그
+ul(unordered List - 순서 표기를 하지 않는 목록)
+	li
+	CSS - list-style
+		-disc
+		-circle
+		-square
+		-none -안보임
+
+ol(Order List - 순서 표기를 하는 목록)
+	li
+
+type
+	-'1' : 숫자로 순서 표기 (기본)
+	-'A|a' : 알파벳 표기
+	-'I|i' : 로마자 표기
+
+설명 리스트
+dl (Description List)
+	dt - 설명 제목
+	dd - 설명 내용
+
+기타
+<style> ~ </style> -> CSS 문법을 해석해주는 태그
+<script> ~ </script> -> 자바스크립트 문법을 해석해주는 태그
+
+
+14. BLOCK && INLINE
+
+block - 문단
+-줄 개행
+-공간 O, 너비, 높이 O
+-상하좌우 외부 여백 O
+<p>
+<div>
+
+inline - 문장
+-줄 개행 X, 영역 끝에 도달했을 때 줄개행
+-공간 X, 너비, 높이 X
+-행간, 자간, 단어 사이 간격
+-외부여백 좌우 가능 O
+<a>
+<span>
+
+
+15. class 속성
+
+-태그(요소)를 선택
+-복수객 선택
+
+
+16. id 속성
+
+-태그(요소)를 선택
+-유일한 선택 속성
+
+17. iframe
+
+18. javascript
+<script>..자바스크립트 코드..</script>
+<script src="경로"></script>
+
+<link ....
+
+
+19. 뷰포트(viewport)
+	-보이는 화면
+
+20. 시멘틱 요소
+의미를 명확히 알 수 있는 태그
+table - 표
+li
+p
+header
+footer
+nav
+aside
+section
+article
+form
+
+
+--------------------------------
+div
+span
+
+
+21.엔티티 문자
+&lt - lesser then <
+&gt - greater then >
+&nbsp; - 공백 1개
+&copy; - 저작권
+
+
+22. form - 양식
+<form>
+	-method : 제출 방법(GET, POST)
+	-action : 제출처 경로 (서버 경로)
+	input
+		type
+			-hidden : 숨김 값
+			-text : 한줄 입력
+			-password : 패스워드 전용
+			-email : 이메일 형식
+			-number : 숫자 형식
+			-date : 날짜 형식
+			-color : 색상 형식
+			-range : 범위
+			-radio : 라디오 버튼, 여러개 중에서 한개 선택
+			-checkbox : 체크박스 버튼, 여러개 중에서 여러개 선택
+			    label - 체크박스, 라디오버튼을 Label 태그로 감싸면 텍스트 클릭시 -> 체크박스 클릭
+
+			checked 체크된 상태		
+	
+			-submit : 양식 제출
+			-reset : 양식 초기화
+
+		-name : 양식 데이터 이름
+		-value : 양식 데이터 값
+		-required : 필수 입력 항목
+		-placeholder : 안내 문구
+		-minlength : 최소 자리수
+		-maxlangth : 최대 자리수
+
+button
+	type 	-button : 일반 버튼
+		-submit : 제출 버튼
+		-reset : 초기화 버튼
+
+select
+	option - 선택 항목
+		-value : 항목
+
+textarea : 여러줄 입력
+	rows - 몇 행
+	cols - 몇 칸
+
+div
+span
+
+
+
+
+
+
+
+
